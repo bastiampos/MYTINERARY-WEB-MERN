@@ -3,7 +3,7 @@ import axios from 'axios'
 const authActions = {
     addNewUser: (user) => {
         return (dispatch, getState) =>  {
-            axios.post('https://mytinerary-scampos.herokuapp.com/api/user/singup', {...user})
+            axios.post('https://mytinerary-bastiampos.herokuapp.com/api/user/singup', {...user})
                 .then(res => {
                     if(res.data) {
                         dispatch({type: 'AUTH_USER', payload: res.data})
@@ -14,7 +14,7 @@ const authActions = {
     },
     loginUser: (loginUser) => {
         return (dispatch, getState) => {
-            axios.post('https://mytinerary-scampos.herokuapp.com/api/user/singin', {...loginUser})
+            axios.post('https://mytinerary-bastiampos.herokuapp.com/api/user/singin', {...loginUser})
                 .then(res => {
                     dispatch({type: 'AUTH_USER', payload: res.data})
                 })
@@ -23,7 +23,7 @@ const authActions = {
     },
     loginLocalStorage: (token) => {
         return (dispatch, getState) => {
-            axios.get('https://mytinerary-scampos.herokuapp.com/api/verifytoken', {
+            axios.get('https://mytinerary-bastiampos.herokuapp.com/api/verifytoken', {
                 headers: { Authorization: 'Bearer ' + token }
             })
                 .then( res => dispatch({type: 'AUTH_USER_LS', payload: res.data}) )

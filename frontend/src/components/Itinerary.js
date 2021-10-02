@@ -25,7 +25,7 @@ const Itinerary = ({itinerary, userId, token}) => {
 
         if(valueNewComment) {
             axios.post(
-                `https://mytinerary-scampos.herokuapp.com/api/comments/${itinerary._id}`, 
+                `https://mytinerary-bastiampos.herokuapp.com/api/comments/${itinerary._id}`, 
                 {
                     userId: userId._id,
                     comment: valueNewComment
@@ -45,7 +45,7 @@ const Itinerary = ({itinerary, userId, token}) => {
     }
 
     useEffect( () => {
-        axios.get(`https://mytinerary-scampos.herokuapp.com/api/activities/${itinerary._id}`)
+        axios.get(`https://mytinerary-bastiampos.herokuapp.com/api/activities/${itinerary._id}`)
                 .then( res => {
                     setActivities(res.data.response)
                 })
@@ -66,7 +66,7 @@ const Itinerary = ({itinerary, userId, token}) => {
     const newLike = () => {  
         if(token) {
             axios.post(
-                `https://mytinerary-scampos.herokuapp.com/api/likes/${itinerary._id}`, 
+                `https://mytinerary-bastiampos.herokuapp.com/api/likes/${itinerary._id}`, 
                 {userId: userId._id},
                 {headers: {Authorization: "Bearer " + token}}
             )
@@ -83,7 +83,7 @@ const Itinerary = ({itinerary, userId, token}) => {
     const deleteLike = () => {
         if (token) {
             axios.post(
-                `https://mytinerary-scampos.herokuapp.com/api/deletelike/${itinerary._id}`, 
+                `https://mytinerary-bastiampos.herokuapp.com/api/deletelike/${itinerary._id}`, 
                 {userId: userId._id},
                 {headers: {Authorization: "Bearer " + token}}
             )
