@@ -80,7 +80,7 @@ const ItineraryComment = ({comment, userId, token, itineraryId}) => {
                         type="text" 
                         defaultValue={comment.comment}
                     />
-                    {(userId && (userId._id == comment.userId._id)) &&
+                    {(userId && (userId._id === comment.userId._id)) &&
                         <div className="comment-icons">
                             <div style={{display: "flex"}}>
                                 {!edit && <svg xmlns="http://www.w3.org/2000/svg" onClick={editComment} fill="currentColor" className="edit-icon" viewBox="0 0 16 16">
