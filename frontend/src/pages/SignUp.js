@@ -174,7 +174,7 @@ const SignUp = (props) => {
                         {turndisabled && <button className="button-disabled signout">Sign Up</button>}
                         {!turndisabled && <button className="button-login signout" onClick={sendNewUserSubmit}>Sign Up</button>}
                         <GoogleLogin
-                            clientId="478587460975-62o8u6n729gggfpfg0cqeqn7em6fgggb.apps.googleusercontent.com"
+                            clientId="478587460975-dj2770atk55b2e7tnrtj6mip2ii1qaf0.apps.googleusercontent.com"
                             buttonText="Create account with Google"
                             onSuccess={responseGoogle}
                             onFailure={responseGoogle}

@@ -3,7 +3,7 @@ import axios from "axios"
 const citiesActions = {
     getCities: (token) => {
         return (dispatch, getState) => {
-            axios.get('http://localhost:4000/api/cities', {
+            axios.get('https://mytinerary-scampos.herokuapp.com/api/cities', {
                 headers: {
                     Authorization: 'Bearer ' + token
                 }

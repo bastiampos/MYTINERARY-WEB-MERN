@@ -20,7 +20,7 @@ const ItineraryComment = ({comment, userId, token, itineraryId}) => {
 
     const saveComment = () => {
         token && axios.post(
-            `http://localhost:4000/api/editcomment/${itineraryId}`, 
+            `https://mytinerary-scampos.herokuapp.com/api/editcomment/${itineraryId}`, 
             {
                 _id: comment._id,
                 userId: userId,
@@ -39,7 +39,7 @@ const ItineraryComment = ({comment, userId, token, itineraryId}) => {
     const deleteComment = () => {
         let data = comment._id
         token && axios.post(
-            `http://localhost:4000/api/deletecomment/${itineraryId}`, 
+            `https://mytinerary-scampos.herokuapp.com/api/deletecomment/${itineraryId}`, 
             {commentId: data},
             {headers: {Authorization: "Bearer " + token}}
         )

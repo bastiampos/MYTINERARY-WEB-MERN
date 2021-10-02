@@ -3,7 +3,7 @@ import axios from "axios"
 const itinerariesActions = {
     getItineraries: (cityId) => {
         return (dispatch, getState) => {
-            axios.get(`http://localhost:4000/api/itineraries/${cityId}`)
+            axios.get(`https://mytinerary-scampos.herokuapp.com/api/itineraries/${cityId}`)
                 .then( res => {
                     dispatch( {type: 'GET_ALL_ITINERARIES', payload: res.data.response} )
                 })
@@ -14,7 +14,7 @@ const itinerariesActions = {
         return () => {
             if(token) {
                 axios.post(
-                    `http://localhost:4000/api/likes/${itineraryId}`, 
+                    `https://mytinerary-scampos.herokuapp.com/api/likes/${itineraryId}`, 
                     {userId: userId},
                     {headers: {Authorization: "Bearer " + token}}
                 )
@@ -26,7 +26,7 @@ const itinerariesActions = {
     editComment: (token, userId, valueComment, commentId, itineraryId) => {
         return () => {
             axios.post(
-                `http://localhost:4000/api/editcomment/${itineraryId}`, 
+                `https://mytinerary-scampos.herokuapp.com/api/editcomment/${itineraryId}`, 
                 {
                     _id: commentId,
                     userId: userId,
@@ -41,7 +41,7 @@ const itinerariesActions = {
     deleteComment: (token, commentId, itineraryId) => {
         return () => {
             token && axios.post(
-                `http://localhost:4000/api/deletecomment/${itineraryId}`, 
+                `https://mytinerary-scampos.herokuapp.com/api/deletecomment/${itineraryId}`, 
                 {commentId: commentId},
                 {headers: {Authorization: "Bearer " + token}}
             )
