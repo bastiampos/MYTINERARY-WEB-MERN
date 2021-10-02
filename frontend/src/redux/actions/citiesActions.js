@@ -3,11 +3,7 @@ import axios from "axios"
 const citiesActions = {
     getCities: (token) => {
         return (dispatch, getState) => {
-            axios.get('https://mytinerary-bastiampos.herokuapp.com/api/cities', {
-                headers: {
-                    Authorization: 'Bearer ' + token
-                }
-            })
+            axios.get('https://mytinerary-bastiampos.herokuapp.com/api/cities')
                 .then( res =>  dispatch( {type: 'GET_ALL_CITIES', payload: res.data.response} ))
                 .catch( error =>  console.log(error))
         }
