@@ -6,7 +6,14 @@ el costo y puedes leer y dejar comentarios.
 
 ## Instalación
 
-Si desea correr este proyecto, simplemente clone este repositorio y ejecute npm install luego npm start en carpeta raiz y carpeta frontend
+Si desea correr este proyecto, simplemente clone este repositorio y ejecute en la carpeta frontend
+```
+npm install
+```
+<sup> Luego el comando </sup>
+```
+npm start
+```
 
 ## Tecnologías
 
